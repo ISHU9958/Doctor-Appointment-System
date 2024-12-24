@@ -22,6 +22,15 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 
+// routes
+
+app.use('/api/v1/user',require("./routes/userRoutes"));
+app.use('/api/v1/admin',require("./routes/adminRoutes"));
+app.use('/api/v1/doctor',require("./routes/doctorRoutes"));
+
+
+
+
 // Serve static files from Vite's dist folder
 app.use(express.static(path.join(__dirname, './client/dist')));
 
@@ -30,12 +39,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/dist/index.html'));
 });
 
-
-// routes
-
-app.use('/api/v1/user',require("./routes/userRoutes"));
-app.use('/api/v1/admin',require("./routes/adminRoutes"));
-app.use('/api/v1/doctor',require("./routes/doctorRoutes"));
 
 //listen port
 const port=process.env.PORT || 3000
