@@ -18,7 +18,6 @@ module.exports=async (req,res,next)=>{
             req.body.userId = decode.id
             req.body.isAdmin=decode.isAdmin;
             req.body.isDoctor=decode.isDoctor;
-
             next()
         }
     })

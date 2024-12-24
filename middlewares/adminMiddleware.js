@@ -1,7 +1,7 @@
 module.exports = async (req, res, next) => {
     try {
+        
         const isAdmin =( req.body.isAdmin === true); 
-    
         if (isAdmin) {
             next();
         } else {

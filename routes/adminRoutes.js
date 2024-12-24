@@ -7,7 +7,7 @@ const router=express.Router();
 
 router.get('/getAllUsers',authMiddleware,adminMiddleWare,getAllUsersController);
 
-router.get('/getAllDoctors',authMiddleware,adminMiddleWare,getAllDoctorsController);
+router.get('/getAllDoctors',authMiddleware,getAllDoctorsController);
 
 
 router.post('/changeAccountStatus',authMiddleware,adminMiddleWare,changeAccountStatusController);

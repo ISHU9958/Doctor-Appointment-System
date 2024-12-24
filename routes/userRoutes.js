@@ -35,7 +35,7 @@ router.post('/delete-all-notification',authMiddleware,deleteAllNotificationContr
 router.post('/getAllDoctors',authMiddleware,getAllDoctorsController);
 
 // book appointmnet
-router.post('/book-appointment',authMiddleware,bookAppointmentController);
+router.post('/book-appointment',authMiddleware,userMiddleware,bookAppointmentController);
 
 
 // book availability
